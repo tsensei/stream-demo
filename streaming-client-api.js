@@ -1,7 +1,7 @@
 'use strict';
 
 let DID_API = {
-  key: '2ltbmlrMjQ3QGdtYWlsLmNvbQ:DIyuYzoEXWfNIP7VK_20U',
+  key: 'c2ltbmlrMjQ3QGdtYWlsLmNvbQ:DIyuYzoEXWfNIP7VK_20U',
   url: 'https://api.d-id.com',
   service: 'talks',
 };
@@ -31,7 +31,7 @@ const streamingStatusLabel = document.getElementById('streaming-status-label');
 
 const presenterInputByService = {
   talks: {
-    source_url: 'https://d-id-public-bucket.s3.amazonaws.com/or-roman.jpg',
+    source_url: 'https://raw.githubusercontent.com/tsensei/stream-demo/main/or-roman.jpg',
   },
   clips: {
     presenter_id: 'rian-lZC6MmWfC1',
@@ -95,14 +95,16 @@ startButton.onclick = async () => {
       },
       body: JSON.stringify({
         script: {
-          type: 'audio',
-          audio_url: 'https://d-id-public-bucket.s3.us-west-2.amazonaws.com/webrtc.mp3',
-        },
-        ...(DID_API.service === 'clips' && {
-          background: {
-            color: '#FFFFFF',
+          type: 'text',
+          subtitles: true,
+          provider: {
+            type: 'elevenlabs',
+            voice_id: '21m00Tcm4TlvDq8ikWAM',
+            model_id: 'eleven_multilingual_v2',
           },
-        }),
+          ssml: 'false',
+          input: 'This is Digital Almaty 2024',
+        },
         config: {
           stitch: true,
         },
