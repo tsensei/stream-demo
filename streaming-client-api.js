@@ -31,7 +31,7 @@ const streamingStatusLabel = document.getElementById('streaming-status-label');
 
 const presenterInputByService = {
   talks: {
-    source_url: 'https://raw.githubusercontent.com/tsensei/stream-demo/main/or-roman.jpg',
+    source_url: 'https://raw.githubusercontent.com/tsensei/stream-demo/main/or-avatar.jpg',
   },
   clips: {
     presenter_id: 'rian-lZC6MmWfC1',
@@ -103,7 +103,8 @@ startButton.onclick = async () => {
             model_id: 'eleven_multilingual_v2',
           },
           ssml: 'false',
-          input: 'This is Digital Almaty 2024',
+          input:
+            'The international digital forum Digital Almaty is a traditional dialogue platform for discussing the digital agenda, new strategies for digital transformation and trends in the field of digital technologies.',
         },
         config: {
           stitch: true,
